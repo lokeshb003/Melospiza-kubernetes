@@ -12,4 +12,4 @@ spec:
      nodePort: 30333
   selector:
     app: melospiza-web
-  type: NodePort
+  type: LoadBalancer
