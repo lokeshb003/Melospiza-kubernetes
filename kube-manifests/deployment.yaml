@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: melospiza-web
+  name: melospiza-web
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: melospiza-web
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: melospiza-web
+    spec:
+      containers:
+       - image: lokeshb003/melospiza-startup:latest
+         name: melospiza-web
+         imagePullPolicy: Always
+         ports:
+          - containerPort: 80
