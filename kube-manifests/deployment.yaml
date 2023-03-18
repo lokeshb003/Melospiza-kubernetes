@@ -16,7 +16,7 @@ spec:
         app: melospiza-web
     spec:
       containers:
-       - image: lokeshb003/melospiza-startup:v3
+       - image: lokeshb003/melospiza-startup:v1
          name: melospiza-web
          imagePullPolicy: Always
          ports:
