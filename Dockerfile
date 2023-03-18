@@ -1,18 +1,16 @@
 FROM ubuntu:22.10 
 
-WORKDIR /home/lokesh/melospiza/Melospiza
+WORKDIR /root
+RUN apt update && apt install git -y
+RUN git clone https://github.com/MelospizaStartUp/Melospiza
+WORKDIR /root/Melospiza
+RUN apt install nginx -y
 
-RUN mkdir /root/melospiza
-COPY * /root/melospiza/
-
-RUN apt update && apt install nginx -y
-
-WORKDIR /root/melospiza
 COPY * /var/www/html/
 
 RUN rm /var/www/html/index.nginx-debian.html
 RUN apt install systemctl -y
-RUN systemctl enable nginx && systemctl start nginx 
+RUN systemctl enable nginx 
 EXPOSE 80
 
-ENTRYPOINT ['/bin/bash','-c']
+CMD ["nginx","-g","daemon off;"]
