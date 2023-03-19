@@ -8,7 +8,7 @@ RUN git clone https://github.com/MelospizaStartUp/Melospiza
 WORKDIR /root/melo/Melospiza
 RUN apt install nginx -y
 
-COPY /root/melo/Melospiza/* /var/www/html/
+RUN cp -r * /var/www/html
 
 RUN rm /var/www/html/index.nginx-debian.html
 RUN apt install systemctl -y
