@@ -9,7 +9,7 @@ spec:
    - port: 80
      protocol: TCP
      targetPort: 80
-     nodePort: 30334
+     nodePort: 30338
   selector:
     app: synergy-web
   type: LoadBalancer
