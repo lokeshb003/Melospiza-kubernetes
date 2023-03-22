@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: synergy-web
+  name: synergy-web-app
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: synergy-web
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: synergy-web
+    spec:
+      containers:
+       - image: lokeshb003/synergy-react-app:v1
+         name: synergy-web
+         imagePullPolicy: Always
+         ports:
+          - containerPort: 80
