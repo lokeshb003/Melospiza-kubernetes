@@ -16,7 +16,7 @@ spec:
         app: melospiza-web
     spec:
       containers:
-       - image: lokeshb003/melospiza-startup:35
+       - image: ghcr.io/melospizastartup/portfolio:main
          name: melospiza-web
          imagePullPolicy: Always
          ports:
