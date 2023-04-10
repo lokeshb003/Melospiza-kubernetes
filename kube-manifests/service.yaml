@@ -8,7 +8,7 @@ spec:
   ports:
    - port: 80
      protocol: TCP
-     targetPort: 80
+     targetPort: 3000
      nodePort: 30333
   selector:
     app: melospiza-web
